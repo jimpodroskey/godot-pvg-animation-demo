@@ -1,0 +1,46 @@
+[gd_resource type="AnimationNodeBlendSpace2D" load_steps=9 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Hand-CasualWest"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Hand-CasualSouthWest"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Hand-CasualSouth"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Hand-CasualSouthEast"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Hand-CasualEast"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Hand-CasualNorthEast"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Hand-CasualNorth"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Hand-CasualNorthWest"
+
+[resource]
+blend_point_0/node = SubResource( 1 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 2 )
+blend_point_1/pos = Vector2( -1, 1.0 )
+blend_point_2/node = SubResource( 3 )
+blend_point_2/pos = Vector2( 0, 1.0 )
+blend_point_3/node = SubResource( 4 )
+blend_point_3/pos = Vector2( 1, 1.0 )
+blend_point_4/node = SubResource( 5 )
+blend_point_4/pos = Vector2( 1, 0 )
+blend_point_5/node = SubResource( 6 )
+blend_point_5/pos = Vector2( 1, -1.0 )
+blend_point_6/node = SubResource( 7 )
+blend_point_6/pos = Vector2( 0, -1.0 )
+blend_point_7/node = SubResource( 8 )
+blend_point_7/pos = Vector2( -1, -1.0 )
+min_space = Vector2( -1, -1.0 )
+max_space = Vector2( 1, 1.0 )
+blend_mode = 1

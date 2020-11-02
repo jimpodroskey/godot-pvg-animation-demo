@@ -1,0 +1,46 @@
+[gd_resource type="AnimationNodeBlendSpace2D" load_steps=9 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Pray-StandingWest"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Pray-StandingSouthWest"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Pray-StandingSouth"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Pray-StandingSouthEast"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Pray-StandingEast"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Pray-StandingNorthEast"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Pray-StandingNorth"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Pray-StandingNorthWest"
+
+[resource]
+blend_point_0/node = SubResource( 1 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 2 )
+blend_point_1/pos = Vector2( -1, 1.0 )
+blend_point_2/node = SubResource( 3 )
+blend_point_2/pos = Vector2( 0, 1.0 )
+blend_point_3/node = SubResource( 4 )
+blend_point_3/pos = Vector2( 1, 1.0 )
+blend_point_4/node = SubResource( 5 )
+blend_point_4/pos = Vector2( 1, 0 )
+blend_point_5/node = SubResource( 6 )
+blend_point_5/pos = Vector2( 1, -1.0 )
+blend_point_6/node = SubResource( 7 )
+blend_point_6/pos = Vector2( 0, -1.0 )
+blend_point_7/node = SubResource( 8 )
+blend_point_7/pos = Vector2( -1, -1.0 )
+min_space = Vector2( -1, -1.0 )
+max_space = Vector2( 1, 1.0 )
+blend_mode = 1

@@ -1,0 +1,57 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://MonsterSmallPlayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://road.png" type="Texture" id=2]
+[ext_resource path="res://Sprite_1.png" type="Texture" id=3]
+[ext_resource path="res://BlendSpaces/Idle.tres" type="AnimationNodeBlendSpace2D" id=4]
+[ext_resource path="res://Chicken.gd" type="Script" id=5]
+[ext_resource path="res://BlendSpaces/Walk.tres" type="AnimationNodeBlendSpace2D" id=6]
+[ext_resource path="res://BlendSpaces/Attack1.tres" type="AnimationNodeBlendSpace2D" id=7]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=3]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=4]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=1]
+states/Attack/node = ExtResource( 7 )
+states/Attack/position = Vector2( 1238, 335 )
+states/Idle/node = ExtResource( 4 )
+states/Idle/position = Vector2( 849, 194 )
+states/Walk/node = ExtResource( 6 )
+states/Walk/position = Vector2( 1154, 194 )
+transitions = [ "Idle", "Walk", SubResource( 3 ), "Walk", "Idle", SubResource( 4 ), "Idle", "Attack", SubResource( 5 ), "Attack", "Idle", SubResource( 6 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Chicken" type="KinematicBody2D" parent="."]
+position = Vector2( 371, 396 )
+script = ExtResource( 5 )
+speed = 100
+
+[node name="anim_all" type="Sprite" parent="Chicken"]
+texture = ExtResource( 3 )
+vframes = 20
+hframes = 20
+frame = 134
+
+[node name="MonsterSmallPlayer" parent="Chicken" instance=ExtResource( 1 )]
+
+[node name="AnimationTree" type="AnimationTree" parent="Chicken"]
+tree_root = SubResource( 1 )
+anim_player = NodePath("../MonsterSmallPlayer")
+parameters/playback = SubResource( 2 )
+parameters/Attack/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( -0.000718415, -0.00315452 )
+parameters/Walk/blend_position = Vector2( 0, 0 )
