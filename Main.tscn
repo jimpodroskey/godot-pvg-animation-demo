@@ -19,11 +19,11 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id=1]
 states/Attack/node = ExtResource( 7 )
-states/Attack/position = Vector2( 1238, 335 )
+states/Attack/position = Vector2( 744, 217 )
 states/Idle/node = ExtResource( 4 )
-states/Idle/position = Vector2( 849, 194 )
+states/Idle/position = Vector2( 477, 105 )
 states/Walk/node = ExtResource( 6 )
-states/Walk/position = Vector2( 1154, 194 )
+states/Walk/position = Vector2( 782, 105 )
 transitions = [ "Idle", "Walk", SubResource( 3 ), "Walk", "Idle", SubResource( 4 ), "Idle", "Attack", SubResource( 5 ), "Attack", "Idle", SubResource( 6 ) ]
 start_node = "Idle"
 
@@ -36,15 +36,15 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Chicken" type="KinematicBody2D" parent="."]
-position = Vector2( 371, 396 )
+position = Vector2( 312.201, 331.855 )
 script = ExtResource( 5 )
-speed = 100
 
 [node name="anim_all" type="Sprite" parent="Chicken"]
 texture = ExtResource( 3 )
+centered = false
 vframes = 20
 hframes = 20
-frame = 134
+frame = 48
 
 [node name="MonsterSmallPlayer" parent="Chicken" instance=ExtResource( 1 )]
 
@@ -53,5 +53,5 @@ tree_root = SubResource( 1 )
 anim_player = NodePath("../MonsterSmallPlayer")
 parameters/playback = SubResource( 2 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
-parameters/Idle/blend_position = Vector2( -0.000718415, -0.00315452 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
